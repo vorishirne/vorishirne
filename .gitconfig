@@ -1,0 +1,22 @@
+# git submodule update --init --recursive
+#
+
+# git diff command shows the submodule diff in `git diff` output
+[diff]
+	submodule = log
+# this sets the submodule branch, must be handled in .gitsubmodule though
+[submodule "DbConnector"]
+	branch = master
+# `git status` will also have submodules listed if changed
+[status]
+	submodulesummary = 1
+# git push will check that submodules have been pushed, otherwise it will fail.
+# change to `on-demand` to push at that time.
+[push]
+	recurseSubmodules = check
+# when we do git checkout, the git module pointing to the commit may change,
+# in that case, the contents will also change to the commit pointed by new branch
+
+# actually this adds --recurse-submodules true to all commands except clone.
+[submodule]
+	recurse = true
