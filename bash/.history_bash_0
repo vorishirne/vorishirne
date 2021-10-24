@@ -1,0 +1,99 @@
+. /vorishirne/all/watergist/bash/main.sh 
+harm
+touch go.sh
+export PS1="\[\033[3;32m\]\u\[\033[m\]@\[\033[4;33m\]\H\[\033[m\] \[\033[2;34m\]\$(pwd)\[\033[m\]\$(__git_ps1 '\[\033[2;32m\] in \[\033[m\]\[\033[4;36m\]%s\[\033[m\]')\n\[\033[5;36m\]▶\[\033[m\] "
+touch android.sh
+
+
+
+a=b
+echo $a
+function x{ echo sdfd
+echo $a
+}
+function x{ echo sdfd; echo $a }
+function x { echo sdfd ; echo $a }
+function x { echo sdfd ; echo $a ; }
+x
+[ -z temp ]  && echo true
+ls
+[ -z MOK.der ]  && echo true
+[ -f MOK.der ]  && echo true
+[ -f MOK.der2 ]  && echo true
+. /vorishirne/all/watergist/bash/main.sh 
+idea
+. /vorishirne/all/watergist/bash/main.sh 
+idea
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl krew update
+krew
+which krew
+$PATH
+echo $PATH | grep vorishirne
+/vorishirne/all/bin/binaries/krew
+krew
+/vorishirne/all/bin/binaries/krew update
+. /vorishirne/all/watergist/bash/main.sh 
+krew
+/vorishirne/all/bin/binaries/krew 
+echo $PATH | grep vorishirne
+gedit /vorishirne/all/watergist/bash/main.sh 
+. /vorishirne/all/watergist/bash/main.sh 
+krew
+cd ${HOME}/.krew/bin
+ls
+./kubectl-krew 
+cd -
+kubectl krew update
+export PATH=$PATH:${HOME}/.krew/bin
+kubectl krew update
+kubectl krew install get-all
+kubectl krew install modify-secret
+cd -
+ls
+cd ..
+;s
+ls
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+which kubectl
+export PATH=""
+export PATH=-
+export PATH=
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+export PATH=
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+export PATH=
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+export PATH=
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+export PATH=
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+export PATH=
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+echo $PATH
+. /vorishirne/all/watergist/bash/main.sh 
+export PATH=
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+echo $PATH
+kubectl
+. /vorishirne/all/watergist/bash/main.sh 
+kubectl
