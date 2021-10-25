@@ -13,6 +13,7 @@ HISTFILE=$bashdir/.history_bash_0
 HISTSIZE=-1
 HISTFILESIZE=-1
 
+. $bashdir/vm.sh
 . $bashdir/path.sh
 . $bashdir/editor.sh
 . $bashdir/k8.sh

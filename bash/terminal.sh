@@ -28,8 +28,8 @@ function night-lamp {
 
 function short-path {
 	sed -e "s:^$HOME:~:" \
-	-e "s:/vorishirne/all:+:" \
-	-e "s:/vorishirne:*:" \
+	-e "s:^/vorishirne/all:+:" \
+	-e "s:^/vorishirne:*:" \
 	 <<< $PWD
 }
 # blinking underscored cursor
