@@ -1,7 +1,8 @@
 function editor-launch {
-	edt=/vorishisrne/all/bin/editor/"$1"/bin/"$1".sh
+	edt=/vorishirne/all/bin/editor/"$1"/bin/"$1".sh
+	args="${@:3}"
 	if [ -f $edt ] ; then	
-    $edt ${2:-.} 1>/dev/null 2>&1 & disown ;
+    $edt ${args:-.} 1>/dev/null 2>&1 & disown ;
     if [ "$2" = "exit" ] ; then
       exit $?
     fi
@@ -10,15 +11,22 @@ function editor-launch {
   fi
 }
 
-alias harm="editor-launch pycharm exit"
-alias idea="editor-launch idea exit"
-alias goland="editor-launch goland exit"
-alias webstorm="editor-launch webstorm exit"
-alias studio="editor-launch studio exit"
+alias harmx="editor-launch pycharm exit"
+alias ideax="editor-launch idea exit"
+alias golandx="editor-launch goland exit"
+alias webstormx="editor-launch webstorm exit"
+alias studiox="editor-launch studio exit"
 
 
-alias harm-stay="editor-launch pycharm stay"
-alias idea-stay="editor-launch idea stay"
-alias goland-stay="editor-launch goland stay"
-alias webstorm-stay="editor-launch webstorm stay"
-alias studio-stay="editor-launch studio stay"
+alias harm="editor-launch pycharm stay"
+alias idea="editor-launch idea stay"
+alias goland="editor-launch goland stay"
+alias webstorm="editor-launch webstorm stay"
+alias studio="editor-launch studio stay"
+
+alias harmf="harm -e"
+alias ideaf="idea -e"
+alias golandf="goland -e"
+alias webstormf="webstorm -e"
+alias studio="studio -e"
+
