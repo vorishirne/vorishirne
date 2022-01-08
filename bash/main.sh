@@ -17,6 +17,9 @@ HISTFILESIZE=-1
  ;;
 esac
 
+# lets use negate in wildcards
+# ls !(b*)
+shopt -s extglob  # Enables extglob
 
 echo -n $bash_loaded
 if [ "$bash_loaded" != "1" ] ; then

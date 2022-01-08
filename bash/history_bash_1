@@ -107,3 +107,59 @@ ipa
 ip4
 ip4
 resor
+git status
+gitma
+gitma "really untracked commits"
+git status
+git branch
+git branch | grep dns
+git branch
+git branch | grep dns
+resor
+resor
+resor
+resor
+ip4
+resor
+ip4
+ip4 | grep -oP "\d+.\d+.\d+.\d+"
+ip4 | grep -oP "\d+\.\d+\.\d+\.\d+"
+ip4
+resor
+ip4
+resor
+ip4
+resor
+ip4
+ip4
+ipa
+ipen
+resor
+ip4
+ip4
+resor
+ip4
+resor
+ip4
+resor
+ip4
+resor
+resor
+ipen
+resor
+ipen
+lsa
+ls
+ls 1
+ls 1
+ls !(b*)
+ls b*
+touch config
+cp -a ../../host.bkp/.ssh/* ./
+lsa
+ls id_rsa_!(git*)
+rm id_rsa_!(git*)
+chmod 400 id_rsa_*
+lsa
+chmod 600  config 
+lsa
