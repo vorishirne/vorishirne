@@ -163,3 +163,37 @@ chmod 400 id_rsa_*
 lsa
 chmod 600  config 
 lsa
+git submodule foreach --recursive 'git push'
+git push
+git remote ls
+git remote 
+git remote  github get-url
+git remote  get-url
+git remote  get-url github
+git remote  set-url github git@pgithub.com:/vorishirne/vorishirne
+git push
+git push
+git push
+git push
+git remote  set-url github git@github.com:/vorishirne/vorishirne
+git remote  get-url github
+git push
+git push
+git push
+git push
+git push
+git push -u github
+git remote add origin git@github.com:vorishirne/vorishirne.git
+git push -u origin
+git push main -u origin
+git push -u origin main
+git submodule foreach --recursive 'git push'
+git ld
+git ls
+git fetch
+git push
+git status
+gitma really-unresourceful
+git push
+git remote get
+git submodule foreach --recursive 'git push'

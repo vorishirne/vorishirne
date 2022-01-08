@@ -11,7 +11,7 @@ function killa {
 	ps aux | grep "$(echo $@)" |awk '{print $2}' | xargs -triP sudo kill -9 P
 }
 function killx {
-	ps aux | grep "$(echo $@)" |awk '{print $2}' | xargs -triP sudo kill -9 P
+	killa $@
 	exit 0
 }
 

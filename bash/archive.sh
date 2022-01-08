@@ -41,6 +41,4 @@ nok ()
     kubectl get po -A
 }
 
-# copy a bkp of whole os, with right permissions
-sudo cp -a ../d82f753a-0e97-46f3-8887-d0c5b95c3662/ ./u21.20-bkp/fresh/
 
