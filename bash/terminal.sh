@@ -1,4 +1,11 @@
-PS1="\[\033[0;36m\]\$(id -u)\[\033[m\]\[\033[5;33m\]\$(night-lamp)\[\033[m\]"
+# codes are given like this \[\e[ code \] , because of some programming purpose i don't know
+# code is like x;3y;4ym
+# x is for underline blink and stuff
+# 3y is for text color
+# 4y is for bg color
+# https://makandracards.com/makandra/1090-customize-your-bash-prompt
+
+PS1="\[\033[1;37;42m\]\$(id -u) \$?\[\033[m\]\[\033[5;33m\]\$(night-lamp)\[\033[m\]"
 
 # set the terminal name content 
 # why not with ideal PROMPT_COMMAND is because it is overriden via PS1 as PS1 is applied late.
@@ -17,7 +24,7 @@ PROMPT_COMMAND='echo && echo'
 
 function night-lamp {  
    currenttime=$(date +%H:%M)
-   if [[ "$currenttime" > "22:00" ]] || [[ "$currenttime" < "05:00" ]]; then
+   if [[ "$currenttime" > "22:00" ]] || [[ "$currenttime" < "03:00" ]]; then
 	echo -e '\U1F319'
    elif [[ "$currenttime" > "17:00" ]] ; then
      echo -e '\U1FA94'
@@ -33,14 +40,19 @@ function short-path {
 	 <<< $PWD
 }
 # blinking underscored cursor
-echo -e "\e[3 q";
+echo -en "\e[3 q" ;
 
 
-if [ $PWD = "/home/pkv" ] ; then
-  cd /vorishirne/priv/dump 
+if [ "$PWD" = "$HOME" ] ; then
+  cd $(cat $bashdir/cwd)
 fi
-if [ $PWD = "/home/water" ] ; then
-  cd /vorishirne/priv/dump 
-fi
+export CWD=$(cat $bashdir/cwd)
+
+function cwd {
+	echo "$(echo $@)" > $bashdir/cwd
+	cd "$(echo $@)"
+}
+
+
 
 

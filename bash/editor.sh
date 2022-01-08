@@ -1,5 +1,5 @@
 function editor-launch {
-	edt=/vorishirne/all/bin/editor/"$1"/bin/"$1".sh
+	edt=$readonlypath/bin/editor/"$1"/bin/"$1".sh
 	args="${@:3}"
 	if [ -f $edt ] ; then	
     $edt ${args:-.} 1>/dev/null 2>&1 & disown ;
@@ -11,22 +11,26 @@ function editor-launch {
   fi
 }
 
-alias harmx="editor-launch pycharm exit"
+alias pycharmx="editor-launch pycharm exit"
 alias ideax="editor-launch idea exit"
 alias golandx="editor-launch goland exit"
 alias webstormx="editor-launch webstorm exit"
+alias clionx="editor-launch clion exit"
 alias studiox="editor-launch studio exit"
+alias datagripx="editor-launch datagrip exit"
 
-
-alias harm="editor-launch pycharm stay"
+alias pycharm="editor-launch pycharm stay"
 alias idea="editor-launch idea stay"
 alias goland="editor-launch goland stay"
 alias webstorm="editor-launch webstorm stay"
+alias clion="editor-launch clion stay"
 alias studio="editor-launch studio stay"
+alias datagrip="editor-launch datagrip stay"
 
-alias harmf="harm -e"
-alias ideaf="idea -e"
-alias golandf="goland -e"
-alias webstormf="webstorm -e"
-alias studio="studio -e"
+alias pycharmi="pycharm -e"
+alias ideai="idea -e"
+alias golandi="goland -e"
+alias webstormi="webstorm -e"
+alias clioni="clion -e"
+alias studioi="studio -e"
 

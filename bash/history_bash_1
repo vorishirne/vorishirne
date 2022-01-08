@@ -1,0 +1,109 @@
+date +%H:%M
+date %H:%M
+gitma
+studiox
+golandx
+killa vlc
+killa vlc
+bright 1
+exit
+exit
+firefox
+sudo apt install installers/*.deb
+set -x
+sudo apt install installers/*.deb
+sudo apt install ./installers/*.deb
+sudo apt install -y $(ls ./installers/*.deb)
+ls ./installers/*.deb
+set +x
+ls ./installers/*.deb
+ls ./installers/
+ls ./installers/*
+ls ./installers/*.sh
+ls ./installers/*.deb
+sudo apt install ./installers/*.sh
+for shell_file in installers/*.sh; do   bash -ex "$shell_file" || break; done
+for shell_file in installers/*.sh; do   sudo bash -ex "$shell_file" || break; done
+git config --global user.email "vorishirne@gmail.com"
+git config --global user.name "VOrishirne"
+golandx
+golandx
+exit
+killa vlc
+ip -4 -o a
+firefox
+chromium
+studio
+killa studio
+gnome-terminal
+gnome-terminal
+xdg-open .
+nautilus .
+xdm
+gnome-disks
+exit
+ls
+pwd
+studio
+killa studio
+studio
+killa studio
+idea .
+killa idea
+gnome-disks
+exit
+bright .5
+bright .3
+bright .36
+bright .42
+bright .45
+bright .5
+golandx
+git status
+git rm -r --cached ubuntu-clone
+git rm -r -f --cached ubuntu-clone
+git ststus
+git status
+git status  ubuntu-clone/
+git status  ubuntu-clone/*
+git status  ubuntu-clone/*
+git status  ubuntu-clone/**
+git status  ubuntu-clone/*
+git status  ubuntu-clone/**
+git status  ubuntu-clone/installers
+git status  ubuntu-clone/installers/*
+git status  ubuntu-clone/installers/*
+git status  ubuntu-clone/installers/scripts/*
+git status  ubuntu-clone/installers/*/*
+git status  ubuntu-clone/installers/**/*
+git status  ubuntu-clone/*/*
+git status  ubuntu-clone/*/status ubuntu-clone/*/*
+git status  ubuntu-clone/*/status ubuntu-clone/*/status ubuntu-clone/*/status ubuntu-clone/*/*
+git status  ubuntu-clone/.*/*
+git status  ubuntu-clone/.**
+git status  ubuntu-clone/.*
+git status  ubuntu-clone/.*
+git status  ubuntu-clone/.*/
+git status  ubuntu-clone/.*/*
+git status  ubuntu-clone/.*/
+git status  ubuntu-clone/.*/*
+git status  ubuntu-clone/*
+git status  ubuntu-clone/.*/*
+git status  -u
+git status  -u
+git status  -l
++git log --stat ssh/keys/load.md
+git log --stat ssh/keys/load.md
+bright 1
+killa vlc
+killa vlc
+touch handy.sh
+ip4
+ip4
+man grep | grep perl
+man grep | grep \-o
+man grep | grep "\-o"
+ipa
+ip4
+ip4
+resor

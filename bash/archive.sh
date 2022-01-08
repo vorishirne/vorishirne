@@ -18,3 +18,29 @@ sudo update-alternatives  --list x-terminal-emulator | grep -n qterminal  | awk 
 # pkv@INCT-PrashantKumar /home/pkv/sys/r/goreader in master
 # ▶ (green blinking)
 export PS1="\[\033[3;32m\]\u\[\033[m\]@\[\033[4;33m\]\H\[\033[m\] \[\033[2;34m\]\$(pwd)\[\033[m\]\$(__git_ps1 '\[\033[2;32m\] in \[\033[m\]\[\033[4;36m\]%s\[\033[m\]')\n\[\033[5;36m\]▶\[\033[m\] "
+
+# for rotating a command through all the args
+# and execute other based on some condition
+# 
+ok () 
+{ 
+    for arg in "$@"; # the in "$@" got appended automatically
+    do
+        cat $arg | grep --color=auto -qe ".eks.amazonaws.";
+        if [ $? == "0" ]; then
+            echo $arg;
+            nok $arg;
+        fi;
+    done
+}
+
+nok () 
+{ 
+    echo "-------------------------" $1 && echo && echo;
+    k8 ${1#config-};
+    kubectl get po -A
+}
+
+# copy a bkp of whole os, with right permissions
+sudo cp -a ../d82f753a-0e97-46f3-8887-d0c5b95c3662/ ./u21.20-bkp/fresh/
+
