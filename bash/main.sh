@@ -11,6 +11,10 @@ HISTFILE=$bashdir/history_bash_1
 HISTSIZE=-1
 HISTFILESIZE=-1
 
+function x() {
+    "$1" "${@:2}"
+    exit 0
+}
  case "$-" in
  *i*)	
  . $bashdir/terminal.sh

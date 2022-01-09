@@ -6,11 +6,6 @@ function killa {
   ps aux | grep "$*" |awk '{print $2}' | xargs -triP sudo kill -9 P
 	#             "$(echo "$@")"
 }
-function killx {
-	killa "$@"
-	exit 0
-}
-
 
 function ip4 { 
 	ip -4 -o a | awk '{print $2 " " $4}' | grep -v "^lo\s" | grep -oP "\w+\s\d+\.\d+\.\d+\.\d+" ;
@@ -19,7 +14,7 @@ function ip4 {
 function ipw {
 	ip4 | grep "$1" |grep -oP "\d+\.\d+\.\d+\.\d+"
 }
-alias ipen="ipw eno1"
+
 
 function resor {
  	bash_loaded=
