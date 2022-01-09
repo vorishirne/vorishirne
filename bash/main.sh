@@ -32,8 +32,7 @@ if [ "$bash_loaded" != "1" ] ; then
 . $bashdir/k8.sh
 . $bashdir/temp.sh
 . $bashdir/handy.sh
-. $bashdir/program/go.sh
-
+. $bashdir/program/*.sh
 
 
 fi
