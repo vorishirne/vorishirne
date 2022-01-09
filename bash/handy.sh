@@ -3,15 +3,11 @@ alias lsa="ls -al --color=always -h -n --time-style=iso"
 alias gitma="git add -A && git commit -am"
 
 function killa {
-	# ps aux | grep "$1 $2" 
-	# and 
-	# ps aux | grep "$@" 
-	# are not same: @ splits off even inside of the quotes :0
-	# echo echo will take split args and combine them
-	ps aux | grep "$(echo $@)" |awk '{print $2}' | xargs -triP sudo kill -9 P
+  ps aux | grep "$*" |awk '{print $2}' | xargs -triP sudo kill -9 P
+	#             "$(echo "$@")"
 }
 function killx {
-	killa $@
+	killa "$@"
 	exit 0
 }
 

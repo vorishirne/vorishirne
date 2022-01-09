@@ -39,7 +39,7 @@ function short-path {
 	-e "s:^/vorishirne:*:" \
 	 <<< $PWD
 }
-# blinking underscored cursor
+# blinking underscore cursor
 echo -en "\e[3 q" ;
 
 
