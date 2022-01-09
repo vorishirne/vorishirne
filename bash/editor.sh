@@ -1,5 +1,5 @@
 function editor-launch {
-	edt=$readonlypath/bin/editor/"$1"/bin/"$1".sh
+	edt=$allpath/bin/editor/"$1"/bin/"$1".sh
 	args="${@:3}"
 	if [ -f $edt ] ; then	
     $edt ${args:-.} 1>/dev/null 2>&1 & disown ;

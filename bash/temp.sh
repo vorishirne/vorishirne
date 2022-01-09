@@ -1,1 +1,1 @@
-alias bright="xrandr --output DisplayPort-4 --brightness"
+alias b="xrandr --output DisplayPort-4 --brightness"

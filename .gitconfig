@@ -14,6 +14,10 @@
 # change to `on-demand` to push at that time.
 [push]
 	recurseSubmodules = check
+	recurseSubmodules = on-demand
+# or the command to do this manually git submodule foreach --recursive 'git push'
+
+
 # when we do git checkout, the git module pointing to the commit may change,
 # in that case, the contents will also change to the commit pointed by new branch
 
