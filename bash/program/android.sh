@@ -3,4 +3,4 @@ alias emulate="$allpath/bin/framework/android/emulator/emulator -avd "
 # sdk path
 export ANDROID_HOME="$allpath/bin/framework/android"
 # android studio path to point to java
-export JAVA_HOME="$allpath/bin/editors/android-studio/jre"
+export JAVA_HOME="$allpath/bin/editor/studio/jre"
