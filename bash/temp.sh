@@ -1,3 +1,3 @@
-alias b="xrandr --output DisplayPort-4 --brightness"
-export AWS_PROFILE=power
-alias ipen="ipw eno1"
+alias b="xrandr --output DisplayPort-5 --brightness"
+#export AWS_PROFILE=power
+alias ipl="ipw wlx7cc2c62a51fc"

@@ -1,8 +1,8 @@
 # . /vorishirne/vorishirne/all/vorishirne/bash/main.sh
-basedirpath=/vorishirne/vorishirne
-allpath=$basedirpath/all
-bashdir=$allpath/vorishirne/bash
-dump=$allpath/dump
+export basedirpath=/vorishirne/vorishirne
+export allpath=$basedirpath/all
+export bashdir=$allpath/vorishirne/bash
+export dump=$allpath/dump
 
 export EDITOR=gedit
 

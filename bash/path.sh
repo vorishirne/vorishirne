@@ -2,6 +2,7 @@ syspath="$PATH"
 
 binpath="\
 :/snap/bin\
+:~/.local/bin\
 :/usr/local/go/bin\
 :$HOME/.pub-cache/bin\
 :$allpath/bin/binaries\
@@ -12,5 +13,5 @@ programspath="\
 :$allpath/bin/framework/flutter/bin\
 :$allpath/bin/framework/android\
 "
-export PATH=$PATH$binpath$scriptspath$programspath
+export PATH=$PATH$binpath$programspath$scriptspath
 
