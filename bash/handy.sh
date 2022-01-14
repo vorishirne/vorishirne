@@ -15,8 +15,15 @@ function ipw {
 	ip4 | grep "$1" |grep -oP "\d+\.\d+\.\d+\.\d+"
 }
 
+function x() {
+	# simply writing $1 wouldn't eval an alias as they are evaluated at read time in console
+	# shopt -s expand_aliases makes this evaluation in script too, also while sourcing a script, aliases are just ignored as they are not going to be read.
+	eval "$1" "${@:2}"
+	exit 0
+}
 
 function resor {
  	bash_loaded=
 	. $bashdir/main.sh
 }
+

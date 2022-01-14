@@ -1,4 +1,4 @@
-[submodule "book"]
-	path = book
+[submodule "guide"]
+	path = guide
 	url = git@github.com:/vorishirne/research
 	branch = master

@@ -11,37 +11,26 @@ HISTFILE=$bashdir/history_bash_1
 HISTSIZE=-1
 HISTFILESIZE=-1
 
-function x() {
-	# simply writing $1 wouldn't eval an alias as they are evaluated at read time in console 
-	# shopt -s expand_aliases makes this evaluation in script too, also while sourcing a script, aliases are just ignored as they are not going to be read.
-	eval "$1" "${@:2}"
-	exit 0
-}
- case "$-" in
+case "$-" in
  *i*)	
  . $bashdir/terminal.sh
  ;;
 esac
 
-# lets use negate in wildcards
-# ls !(b*)
-shopt -s extglob  # Enables extglob
-
-
-echo -n $bash_loaded
 if [ "$bash_loaded" != "1" ] ; then
+  . $bashdir/vm.sh
+  . $bashdir/path.sh
+  . $bashdir/editor.sh
+  . $bashdir/k8.sh
+  . $bashdir/temp.sh
+  . $bashdir/handy.sh
+  . $bashdir/program/*.sh
 
-
-
-. $bashdir/vm.sh
-. $bashdir/path.sh
-. $bashdir/editor.sh
-. $bashdir/k8.sh
-. $bashdir/temp.sh
-. $bashdir/handy.sh
-. $bashdir/program/*.sh
-
-
+  # lets use negate in wildcards
+  # ls !(b*)
+  shopt -s extglob  # Enables extglob
+else
+  echo -n bash already loaded $bash_loaded
 fi
 
 bash_loaded=1
