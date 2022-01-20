@@ -13,5 +13,9 @@ programspath="\
 :$allpath/bin/framework/flutter/bin\
 :$allpath/bin/framework/android\
 "
-export PATH=$PATH$binpath$programspath$scriptspath
+
+applications="\
+:$HOME/.krew/bin\
+"
+export PATH="${PATH}${binpath}${programspath}${applications}${scriptspath}"
 

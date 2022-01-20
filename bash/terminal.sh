@@ -26,6 +26,9 @@ echo
 echo
 '
 alias sudo="sudo "
+alias f="awk '{print \$1}'"
+alias s="awk '{print \$1}'"
+alias t="awk '{print \$1}'"
 
 function night-lamp {  
    currenttime=$(date +%H:%M)
@@ -51,12 +54,16 @@ echo -en "\e[3 q" ;
 if [ "$PWD" = "$HOME" ] ; then
   cd "$(cat $bashdir/cwd)"
 fi
-export CWD=$(cat $bashdir/cwd)
+export CWD=$(cat "$bashdir"/cwd)
 
 function cwd {
-	echo "$1" > $bashdir/cwd
-	cd "$1"
+  cdir="${1:-"$PWD"}"
+  cdir="$(realpath "$cdir")"
+	echo "$cdir" > "$bashdir"/cwd
+  export CWD="$cdir"
 }
+
+alias ccd="cd \${CWD}"
 
 #function Sudo {
 #        local firstArg=$1
