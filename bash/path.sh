@@ -5,6 +5,7 @@ binpath="\
 :~/.local/bin\
 :/usr/local/go/bin\
 :$HOME/.pub-cache/bin\
+:$allpath/bin/scripts\
 :$allpath/bin/binaries\
 "
 scriptspath="" #populate via script
