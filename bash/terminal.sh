@@ -26,6 +26,7 @@ echo
 echo
 '
 alias sudo="sudo "
+alias sudoi="sudo -i "
 alias f="awk '{print \$1}'"
 alias s="awk '{print \$1}'"
 alias t="awk '{print \$1}'"
