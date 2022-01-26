@@ -7,7 +7,7 @@ export dump=$allpath/dump
 export EDITOR=gedit
 
 # history file
-HISTFILE=$bashdir/history_bash_1
+HISTFILE=$bashdir/history_bash_2
 HISTSIZE=-1
 HISTFILESIZE=-1
 
@@ -27,7 +27,7 @@ if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/program/*.sh
 
   # lets use negate in wildcards
-  # ls !(b*)
+  # ls ../scripts/!(k*).sh
   shopt -s extglob  # Enables extglob
 else
   echo -n bash already loaded $bash_loaded

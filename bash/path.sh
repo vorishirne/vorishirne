@@ -17,6 +17,7 @@ programspath="\
 
 applications="\
 :$HOME/.krew/bin\
+:$allpath/bin/.krew\
 "
 export PATH="${PATH}${binpath}${programspath}${applications}${scriptspath}"
 

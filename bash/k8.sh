@@ -48,3 +48,8 @@ function kunset {
   kubectl config unset contexts.$1
   set +x
 }
+
+function krst {
+	echo "" > ~/.kube/config
+	export KUBECONFIG=~/.kube/config
+}
