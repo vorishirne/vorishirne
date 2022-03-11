@@ -1,19 +1,30 @@
-alias kg="kubectl get"
-alias kga="kubectl get-all"
+alias kg="kubectl get -o wide"
+alias kga="kubectl get-all -o wide"
 alias kd="kubectl delete"
 alias ke="kubectl edit"
 alias kesc="kubectl modify-secret"
 alias kl="kubectl logs -f"
 alias kx="kubectl exec -it"
 alias ka="kubectl apply -f"
-alias kw="watch kubectl get"
+alias kw="watch kubectl get -o wide"
 alias ky="kubectl get -o yaml"
 
-alias helm3="helm"
+function kxc() {
+  # shellcheck disable=SC2068
+  kx "$(kubectl get pod -l app="$1" -o jsonpath='{.items[0].metadata.name}')" ${@:2} 
+}
+
+
+
+
+
+
+
+
 
 UN="-namespaced-knx-"
 KUBECONFIG_DIR="$allpath/repository/.kube"
-KUBECONFIG="$(cat $bashdir/ckns 2>/dev/null)"
+KUBECONFIG="$(cat $bashdir/ckns_$HOSTNAME 2>/dev/null)"
 export KUBECONFIG=${KUBECONFIG:-"$HOME/.kube/config"}
 
 function k8() {
@@ -21,7 +32,7 @@ function k8() {
   config_dir="${3:-devel}"
   config_ns="${2:-default}"
   export KUBECONFIG="$KUBECONFIG_DIR/$config_dir/$config_name$UN$config_ns"
-  echo $KUBECONFIG > $bashdir/ckns
+  echo $KUBECONFIG > $bashdir/ckns_$HOSTNAME
   echo $KUBECONFIG
 }
 
@@ -29,15 +40,17 @@ function kcp {
   kubectl config set-context --current --namespace=default
   mkdir -p "$KUBECONFIG_DIR/${2:-devel}"
   cp $KUBECONFIG "$KUBECONFIG_DIR/${2:-devel}/$1${UN}default"
+  chmod 600 "$KUBECONFIG_DIR/${2:-devel}/$1${UN}default"
   echo copied to "$KUBECONFIG_DIR/${2:-devel}/$1${UN}default"
 }
 
-function knx() {
+function kns() {
   KUBECONFIG_="$(sed -e "s:$UN.*::" <<<"$KUBECONFIG")"
   cat $KUBECONFIG >"$KUBECONFIG_""$UN""$1"
   export KUBECONFIG="$KUBECONFIG_""$UN""$1"
   kubectl config set-context --current --namespace=$1
-  echo $KUBECONFIG > $bashdir/ckns
+  echo $KUBECONFIG > $bashdir/ckns_$HOSTNAME
+  chmod 600 $KUBECONFIG
   echo $KUBECONFIG
 }
 

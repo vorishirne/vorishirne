@@ -3,6 +3,7 @@ export basedirpath=/vorishirne/vorishirne
 export allpath=$basedirpath/all
 export bashdir=$allpath/vorishirne/bash
 export dump=$allpath/dump
+export hdir=$basedirpath/home
 
 export EDITOR=gedit
 
@@ -24,6 +25,7 @@ if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/k8.sh
   . $bashdir/temp.sh
   . $bashdir/handy.sh
+  . $bashdir/command.sh
   . $bashdir/program/*.sh
 
   # lets use negate in wildcards

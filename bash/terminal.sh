@@ -1,20 +1,22 @@
-# codes are given like this \[\e[ code \] , because of some programming purpose i don't know
+# codes are given like this \[\e[ code \] , because of some programming purpose, i don't know
 # code is like x;3y;4ym
-# x is for underline blink and stuff
+# x is for underline, blink and stuff
 # 3y is for text color
 # 4y is for bg color
+# missing any of them will just over-ride them via some default
 # https://makandracards.com/makandra/1090-customize-your-bash-prompt
 
-PS1="\[\033[1;37;42m\]\$(id -u) \$EXIT_CODE\[\033[m\]\[\033[5;33m\]\$(night-lamp)\[\033[m\]"
+PS1="\[\033[1;37;42m\]\$(id -u) \$EXIT_CODE\[\033[m\]\[\033[5m\]\$(night-lamp)\[\033[m\]"
 
 # set the terminal name content 
 # why not with ideal PROMPT_COMMAND is because it is overriden via PS1 as PS1 is applied by bash after PROMPT_COMMAND.
 # and if some bashrc has updated PS1, then it will be counted.
 # but in below case, our part of PS1 executes even more late
-PS1="\[\033]0;$HOSTNAME: ""\$(short-path)""\007\]$PS1" 
-# \007 can be replaced with \a, which is the first non printing char. Named as BEL char
+PS1='\[\033]0; ${TERMINAL_NAME:-"$HOSTNAME: $(short-path)"} \007\]'"$PS1"
+# \007 can be replaced with \a, which is the first non printing char. Named as BEL char. Along with ], it marks the end of the command
 # \033 can be replaced with \e, which is the escape char. Named as ESC char
 # ] after the escape sequences(not escape char), means to receive a command
+# [ after the escape sequences, means to receive some css
 # 0; means change name and icon
 # 1; means change icon # no
 # 2; means change name # not works in qterminal, but does in xterm and genome-terminal
@@ -27,9 +29,13 @@ echo
 '
 alias sudo="sudo "
 alias sudoi="sudo -i "
+
+# shellcheck disable=SC2142
 alias f="awk '{print \$1}'"
-alias s="awk '{print \$1}'"
-alias t="awk '{print \$1}'"
+# shellcheck disable=SC2142
+alias s="awk '{print \$2}'"
+# shellcheck disable=SC2142
+alias t="awk '{print \$3}'"
 
 function night-lamp {  
    currenttime=$(date +%H:%M)
@@ -43,60 +49,32 @@ function night-lamp {
 }
 
 function short-path {
+  echo $(basename $PWD)
+  return
 	sed -e "s:^$HOME:~:" \
 	-e "s:^/vorishirne/vorishirne/all:+:" \
 	-e "s:^/vorishirne/vorishirne:*:" \
 	 <<< $PWD
 }
-# blinking underscore cursor
-echo -en "\e[3 q" ;
+
+function name {
+  TERMINAL_NAME=$1
+}
+
+# blinking block cursor
+echo -en "\e[1 q" ;
 
 
 if [ "$PWD" = "$HOME" ] ; then
-  cd "$(cat $bashdir/cwd)"
+  cd "$(cat $bashdir/cwd_$HOSTNAME)"
 fi
-export CWD=$(cat "$bashdir"/cwd)
+export CWD=$(cat "$bashdir"/cwd_$HOSTNAME)
 
 function cwd {
   cdir="${1:-"$PWD"}"
   cdir="$(realpath "$cdir")"
-	echo "$cdir" > "$bashdir"/cwd
+	echo "$cdir" > "$bashdir"/cwd_$HOSTNAME
   export CWD="$cdir"
 }
 
 alias ccd="cd \${CWD}"
-
-#function Sudo {
-#        local firstArg=$1
-#        if [ $(type -t $firstArg) = function ]
-#        then
-#                shift && command sudo bash -c "$(declare -f $firstArg);$firstArg $*"
-#        elif [ $(type -t $firstArg) = alias ]
-#        then
-#                alias sudo='\sudo '
-#                eval "sudo $@"
-#        else
-#                command sudo "$@"
-#        fi
-#}
-
-
-#f ()
-#{
-#    x="a b";
-#    menu "$x";
-#    y="difficult thing";
-#    echo "a $y to parse";
-#}
-#
-#menu ()
-#{
-#    [ "$1" == "a b" ] &&
-#    echo "here's the menu";
-#}
-#
-#cat <<EOS | sudo bash
-#$(declare -f f)
-#$(declare -f menu)
-#f
-#EOS

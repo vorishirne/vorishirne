@@ -1,5 +1,5 @@
 alias lsa="ls -al --color=always -h -n --time-style=iso"
-
+alias grep=" grep --color=auto"
 alias gitma="git add -A && git commit -am"
 
 function killa {
@@ -9,10 +9,6 @@ function killa {
 
 function ip4 { 
 	ip -4 -o a | awk '{print $2 " " $4}' | grep -v "^lo\s" | grep -oP "\w+\s\d+\.\d+\.\d+\.\d+" ;
-}
-
-function ipw {
-	ip4 | grep "$1" |grep -oP "\d+\.\d+\.\d+\.\d+"
 }
 
 alias grip="history | grep"

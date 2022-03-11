@@ -1,3 +1,5 @@
 .idea
 bash/.history*
-bash/cwd
+bash/history*
+bash/cwd*
+bash/ckns*
