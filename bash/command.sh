@@ -1,1 +1,1 @@
-alias postman="/vorishirne/vorishirne/all/bin/framework/postman/app/postman"
+alias postman="/vo/wo/bin/framework/postman/app/postman"
