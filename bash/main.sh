@@ -26,6 +26,7 @@ if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/temp.sh
   . $bashdir/handy.sh
   . $bashdir/command.sh
+  . $bashdir/aws.sh
   . $bashdir/program/android.sh
   . $bashdir/program/go.sh
 

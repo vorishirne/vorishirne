@@ -7,43 +7,10 @@ sudo update-alternatives  --list x-terminal-emulator | grep -n qterminal  | awk 
 # -n here prints the line no. matched
 
 
-#will get you the arguments starting with "$3". 
-"${@:3}"
-# will get you up to four arguments starting at "$3" (i.e. "$3" "$4" "$5" "$6"), if that many arguments were passed.
-"${@:3:4}" 
-# gives number of args
-"$#"
 
 # will give this PS1
 # pkv@INCT-PrashantKumar /home/pkv/sys/r/goreader in master
 # ▶ (green blinking)
 export PS1="\[\033[3;32m\]\u\[\033[m\]@\[\033[4;33m\]\H\[\033[m\] \[\033[2;34m\]\$(pwd)\[\033[m\]\$(__git_ps1 '\[\033[2;32m\] in \[\033[m\]\[\033[4;36m\]%s\[\033[m\]')\n\[\033[5;36m\]▶\[\033[m\] "
-
-
-# number of cores in cpu
-grep ^cpu\\scores /proc/cpuinfo | uniq |  awk '{print $4}'
-grep -c ^processor /proc/cpuinfo
-
-# for rotating a command through all the args
-# and execute other based on some condition
-# 
-ok () 
-{ 
-    for arg in "$@"; # the in "$@" got appended automatically
-    do
-        cat $arg | grep --color=auto -qe ".eks.amazonaws.";
-        if [ $? == "0" ]; then
-            echo $arg;
-            nok $arg;
-        fi;
-    done
-}
-
-nok () 
-{ 
-    echo "-------------------------" $1 && echo && echo;
-    k8 ${1#config-};
-    kubectl get po -A
-}
 
 

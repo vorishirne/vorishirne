@@ -1,6 +1,6 @@
+alias k="kubectl"
 alias kg="kubectl get"
 alias kga="kubectl get-all -o wide"
-alias kd="kubectl delete"
 alias kds="kubectl describe"
 alias kdsp="kubectl describe po"
 alias ke="kubectl edit"
@@ -10,6 +10,7 @@ alias kx="kubectl exec -it"
 alias ka="kubectl apply -f"
 alias kw="watch kubectl get -o wide"
 alias ky="kubectl get -o yaml"
+alias kd="kubectl --dry-run=client -o yaml"
 
 function kxc() {
   # shellcheck disable=SC2068
