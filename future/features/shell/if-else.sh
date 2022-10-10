@@ -1,5 +1,5 @@
 #bash -e features/shell/if-else.sh
-. features/shell/helpers/helper.sh
+. helpers/scripts/helper.sh
 
 if_command_succeeds() {
 	# the return type will be non! -zero

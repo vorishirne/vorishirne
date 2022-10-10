@@ -1,5 +1,5 @@
 # bash -e features/shell/string-ops.sh
-. features/shell/helpers/helper.sh
+. helpers/scripts/helper.sh
 
 string_arithmetic() {
 	a=er

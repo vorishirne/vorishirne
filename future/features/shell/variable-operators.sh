@@ -1,5 +1,5 @@
 #bash -e features/shell/variable-operators.sh
-. features/shell/helpers/helper.sh
+. helpers/scripts/helper.sh
 
 length_operator() {
 	STR="a b c"
@@ -49,5 +49,37 @@ value_check_operators() {
 	echo '{d+q}'" => ${d+q}"
 }
 
+evaluate_variable_by_name(){
+	v="some value"
+	a=v
+	echo ${!a}
+	gap 1
+
+	echo one application of this is to send an array to a func argument
+	fu(){
+		 a="$2[@]"
+		 b=("${!a}")
+		 echo $b ${b[1]}
+	}
+	arr=(1 "0 3" 4)
+	fu a arr
+	gap 2
+
+	echo one application of this could be to
+	echo detect by variables name, if it is unset
+	a=VAR1
+	echo "${!a-x}"
+	VAR1=coala
+	echo "${!a-x}"
+	echo however -v would be more convinient way
+	gap 3
+}
+
+variables_can_not_start_with_integer() {
+		a1=a
+    echo ${a1}
+    1=a
+    echo ${1}
+}
 
 "$@"

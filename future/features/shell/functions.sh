@@ -1,5 +1,5 @@
 # bash -e features/shell/functions.sh
-. features/shell/helpers/helper.sh
+. helpers/scripts/helper.sh
 
 arg_shift() {
 	fu() {

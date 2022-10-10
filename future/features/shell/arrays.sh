@@ -1,6 +1,6 @@
 #!/bin/bash
 #bash -e features/shell/arrays.sh
-. features/shell/helpers/helper.sh
+. helpers/scripts/helper.sh
 
 loop_an_array() {
 	LIST=(1 2 3)

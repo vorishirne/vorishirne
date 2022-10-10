@@ -25,3 +25,5 @@ alias webstormi="webstorm -e"
 alias clioni="clion -e"
 alias studioi="studio -e"
 
+
+alias pocket="goland /vo/wo/repository/aaorg/sashi/pocketbase"

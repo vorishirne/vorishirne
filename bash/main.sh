@@ -20,6 +20,7 @@ esac
 
 if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/vm.sh
+  . $bashdir/rand_utils.sh
   . $bashdir/path.sh
   . $bashdir/editor.sh
   . $bashdir/k8.sh
@@ -27,6 +28,7 @@ if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/handy.sh
   . $bashdir/command.sh
   . $bashdir/aws.sh
+  . $bashdir/dev.sh
   . $bashdir/program/android.sh
   . $bashdir/program/go.sh
 

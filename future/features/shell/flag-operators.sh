@@ -1,6 +1,6 @@
 #!/bin/bash
 #bash -e features/shell/flag-operators.sh
-. features/shell/helpers/helper.sh
+. helpers/scripts/helper.sh
 
 operator_on_variables() {
 	a=   # false
