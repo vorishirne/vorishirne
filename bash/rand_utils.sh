@@ -8,12 +8,13 @@ function alert {
 loop() {
 	grep_args=$1
 	grep=$2
-	msg=$3
-	shift; shift; shift
+	completed_on=$3
+	msg=$4
+	shift 4
 	for (( ; ; ))
 	do
 		"$@" | grep "$grep_args" "$grep"
-		if [[ $? == '0' ]]
+		if [[ "$?" == "$completed_on" ]]
 		then
 			alert "$msg"
 			return 0;
