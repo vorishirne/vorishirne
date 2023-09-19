@@ -82,4 +82,6 @@ ser-tel-res-stats() {
 }
 
 alias ser='kg po -l group=ser-tel-k'
-
+alias ti='assume cp-qaecm && kl deploy/thunder -c inhale'
+alias te='assume cp-qaecm && kl deploy/thunder -c exhale'
+alias l='assume cp-qaecm && kl deploy/lightning | grep -e ERROR -e FATAL'
