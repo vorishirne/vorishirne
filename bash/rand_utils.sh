@@ -4,3 +4,19 @@ function alert {
 }
 
 
+
+loop() {
+	grep_args=$1
+	grep=$2
+	msg=$3
+	shift; shift; shift
+	for (( ; ; ))
+	do
+		"$@" | grep "$grep_args" "$grep"
+		if [[ $? == '0' ]]
+		then
+			alert "$msg"
+			return 0;
+ fi
+ done
+}

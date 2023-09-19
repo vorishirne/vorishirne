@@ -30,7 +30,7 @@ function shut() {
 }
 
 function git-tag-del(){
-  git fetch
+  git fetch -t
   git push --delete origin $@
   git tag --delete $@
 }

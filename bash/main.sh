@@ -25,6 +25,7 @@ if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/editor.sh
   . $bashdir/k8.sh
   . $bashdir/temp.sh
+  . $bashdir/cred.sh
   . $bashdir/handy.sh
   . $bashdir/command.sh
   . $bashdir/aws.sh
