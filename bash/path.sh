@@ -2,8 +2,8 @@ syspath="$PATH"
 
 binpath="\
 :/snap/bin\
-:~/.local/bin\
-:~/go/bin\
+:$HOME/.local/bin\
+:$HOME/go/bin\
 :/usr/local/go/bin\
 :$allpath/bin/scripts\
 :$allpath/bin/binaries\
