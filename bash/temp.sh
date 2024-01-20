@@ -83,6 +83,7 @@ stats() {
 }
 
 alias vis='kg po -l group=netvis-k'
-alias ti='assume cp-qaecm && kl deploy/thunder -c inhale'
-alias te='assume cp-qaecm && kl deploy/thunder -c exhale'
-alias l='assume cp-qaecm && kl deploy/lightning | grep -e ERROR -e FATAL'
+alias t='assume cp-qaecm && kl deploy/netvis-thunder'
+alias l='assume cp-qaecm && kl deploy/netvis-lightning-ncxsg | grep -e ERROR -e FATAL'
+
+. app/netvis.sh
