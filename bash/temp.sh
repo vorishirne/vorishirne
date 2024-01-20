@@ -70,18 +70,19 @@ alias redshift="psql postgres://ncxvisibility:Cp-12345@a2fae71a6e7d44663881bcf0f
 
 alias postgres="psql postgresql://netvis:hNFVKOtjr1UG7YgW29fs@a2fae71a6e7d44663881bcf0f84ad052-823116798.us-west-2.elb.amazonaws.com:5440/postgres?sslmode=disable"
 
-ser-tel-res-stats() {
-	for (( i=100; ;i++ )); do  
+stats() {
+	pod_name=${1:-"ncxsg"}
+	for (( i=100; ;i++ )); do
 		echo $i;
 		if [[ $i == 100 ]] ; then assume cp-qaecm; i=0; fi
-		POD=$(kgrip lightning | awk '{print $1}' | head -n 1)
+		POD=$(kgrip ${pod_name} | awk '{print $1}' | head -n 1)
 		POD=${POD:-"jaat"}
 		k top pod --no-headers $POD 2>/dev/null | grep -v "Using json format to get metrics" ; sleep 3; 
 
 	done
 }
 
-alias ser='kg po -l group=ser-tel-k'
+alias vis='kg po -l group=netvis-k'
 alias ti='assume cp-qaecm && kl deploy/thunder -c inhale'
 alias te='assume cp-qaecm && kl deploy/thunder -c exhale'
 alias l='assume cp-qaecm && kl deploy/lightning | grep -e ERROR -e FATAL'
