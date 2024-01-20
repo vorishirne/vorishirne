@@ -87,3 +87,13 @@ alias t='assume cp-qaecm && kl deploy/netvis-thunder'
 alias l='assume cp-qaecm && kl deploy/netvis-lightning-ncxsg | grep -e ERROR -e FATAL'
 
 . $bashdir/app/netvis.sh
+
+regcred(){
+	assume cp-qaecm
+	ecrlogin
+	kubectl delete secret ncx-auth-regcred
+	kubectl create secret generic ncx-auth-regcred \
+    --from-file=.dockerconfigjson=$HOME/.docker/config.json \
+    --type=kubernetes.io/dockerconfigjson
+
+}
