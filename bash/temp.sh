@@ -86,4 +86,4 @@ alias vis='kg po -l group=netvis-k'
 alias t='assume cp-qaecm && kl deploy/netvis-thunder'
 alias l='assume cp-qaecm && kl deploy/netvis-lightning-ncxsg | grep -e ERROR -e FATAL'
 
-. app/netvis.sh
+. $bashdir/app/netvis.sh
