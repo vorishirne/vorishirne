@@ -9,6 +9,7 @@ function editor-launch {
   fi
 #  set +x
 }
+export -f editor-launch
 
 alias pycharm="editor-launch pycharm"
 alias idea="editor-launch idea"

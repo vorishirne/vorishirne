@@ -6,6 +6,7 @@ function killa {
   ps aux | grep "$*" |awk '{print $2}' | xargs -triP sudo kill -9 P
 	#             "$(echo "$@")"
 }
+export -f killa
 
 function ip4 { 
 	ip -4 -o a | awk '{print $2 " " $4}' | grep -v "^lo\s" | grep -oP "[\w-]+\s\d+\.\d+\.\d+\.\d+" ;
@@ -26,11 +27,11 @@ function resor {
 
 function shut() {
     ps aux | grep -i zsc | awk '{print $2}' | xargs -trident kill -9 dent
-    shutdown $@
+    shutdown "$@"
 }
 
 function git-tag-del(){
   git fetch -t
-  git push --delete origin $@
-  git tag --delete $@
+  git push --delete origin "$@"
+  git tag --delete "$@"
 }

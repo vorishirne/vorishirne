@@ -4,11 +4,6 @@ alias b="xrandr --output DisplayPort-5 --brightness"
 alias ipl="ipw wlx7cc2c62a51fc"
 export PATH="$PATH:/vo/all/dump/istio/istio-1.12.1/bin"
 
-ecrlogin() {
-	#export $(awsudo ecr)
-    . awsume cp-ecr
-    aws ecr get-login-password | docker login -u AWS --password-stdin https://737819302384.dkr.ecr.us-west-2.amazonaws.com
-}
 
 dflan(){
   sudo ip route add 192.168.29.0/24 dev eno1 table 3
@@ -96,4 +91,16 @@ regcred(){
     --from-file=.dockerconfigjson=$HOME/.docker/config.json \
     --type=kubernetes.io/dockerconfigjson
 
+}
+
+ca() {
+    # Technically the role you should have in ~/.aws/config is dev_ecr, and most people use
+    . awsume cp-ecr
+    # this is just the time-limited auth token to use codeartifact
+    export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain cradlepoint --domain-owner 737819302384 --query authorizationToken --output text`
+    echo "Logged in to Codeartifact"
+    # PIP_INDEX_URL is required to tell pip where to go to get artifacts
+    export PIP_INDEX_URL=https://aws:$CODEARTIFACT_AUTH_TOKEN@cradlepoint-737819302384.d.codeartifact.us-west-2.amazonaws.com/pypi/cp-pypi-cache/simple/
+    # this line below is OPTIONAL and sets your default pip.conf file to have the equivalent of PIP_INDEX_URL (uncomment if you want this to be set)
+    # aws codeartifact login --tool pip --domain cradlepoint --domain-owner 737819302384 --repository cp-pypi-cache
 }

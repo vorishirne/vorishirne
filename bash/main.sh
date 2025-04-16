@@ -19,7 +19,6 @@ case "$-" in
 esac
 
 if [ "$bash_loaded" != "1" ] ; then
-  . $bashdir/vm.sh
   . $bashdir/rand_utils.sh
   . $bashdir/path.sh
   . $bashdir/editor.sh
@@ -30,6 +29,7 @@ if [ "$bash_loaded" != "1" ] ; then
   . $bashdir/command.sh
   . $bashdir/aws.sh
   . $bashdir/dev.sh
+  . $bashdir/program/pyenv.sh
   . $bashdir/program/android.sh
   . $bashdir/program/go.sh
 
@@ -45,3 +45,7 @@ export org=$allpath"/repository/aaorg"
 export guide=$allpath"/vorishirne/guide"
 bash_loaded=1
 
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"

@@ -5,3 +5,12 @@ assume() {
 	echo DYNAMODB__TABLE_NAME=ncx-auth-qa4
 }
 
+ecrlogin() {
+	#export $(awsudo ecr)
+    . awsume cp-ecr
+    aws ecr get-login-password | docker login -u AWS --password-stdin https://737819302384.dkr.ecr.us-west-2.amazonaws.com
+}
+
+
+export -f assume ecrlogin
+
