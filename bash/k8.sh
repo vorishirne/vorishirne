@@ -8,16 +8,17 @@ alias kesc="kubectl modify-secret"
 alias kl="kubectl logs -f"
 alias kx="kubectl exec -it"
 alias ka="kubectl apply -f"
+alias kaa="kubectl apply -R"
 alias kw="watch kubectl get -o wide"
 alias ky="kubectl get -o yaml"
 alias kd="kubectl --dry-run=client -o yaml"
+alias ks="kubectl get secret -o go-template='{{range \$k,\$v := .data}}{{printf \"%s: \" \$k}}{{if not \$v}}{{\$v}}{{else}}{{\$v | base64decode}}{{end}}{{\"\n\"}}{{end}}'"
+
 
 function kxc() {
   # shellcheck disable=SC2068
   kx "$(kubectl get pod -l app="$1" -o jsonpath='{.items[0].metadata.name}')" ${@:2} 
 }
-
-
 
 UN="-namespaced-knx-"
 KUBECONFIG_DIR="$allpath/repository/.kube"
